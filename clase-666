@@ -2,6 +2,8 @@
 Creamos la tabla dance
 */
 
+
+
 create table dance (id_dance integer, nombre varchar2(120), constraint pk_id_dance primary key (id_dance));
 
 --Creamos la secuencia correspondiente

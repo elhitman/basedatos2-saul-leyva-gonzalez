@@ -22,7 +22,7 @@ cursor cursor_empleado is select * from empleado;
 begin
 
 for fila in cursor_empleado loop
-dbms_output.put_line('mensajito');
+dbms_output.put_line('mensajito'||fila.nombre||'  '||'$'||fila.sueldo);
 end loop;
 end;
 /

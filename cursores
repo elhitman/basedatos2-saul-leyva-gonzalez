@@ -1,0 +1,18 @@
+--creamos tabla "empleado"
+create table empleado(id integer,nombre varchar(120),sueldo float); 
+--insertamos nombres y sueldos
+insert into empleado values(1,'juan',5000);
+insert into empleado values(2,'pedro',4000);
+insert into empleado values(3,'pablo',5000);
+insert into empleado values(4,'saul',6000);
+insert into empleado values(5,'raul',10000);
+select * from empleado;
+--creamos select into
+set serveroutput on;
+declare
+nuevo_sueldo float;
+begin
+select sueldo into nuevo_sueldo from empleado where id=2;
+dbms_output.put_line('el sueldo seleccionado es'||nuevo_sueldo);
+end;
+/

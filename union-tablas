@@ -12,3 +12,4 @@ end loop;
 end;
 /
 select * from sucursal
+-- resultado

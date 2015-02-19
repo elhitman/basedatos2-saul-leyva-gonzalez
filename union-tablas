@@ -1,0 +1,14 @@
+set serveroutput on;
+declare
+id_vigente integer;
+venta_actual integer;
+cursor todos is select id_cliente, venta from sucursal;
+begin
+for rec in todos loop
+id_vigente:=rec.id_cliente;
+venta_actual:=rec.venta;
+dbms_output.put_line('id del trabajador es'||rec.venta);
+end loop;
+end;
+/
+select * from sucursal

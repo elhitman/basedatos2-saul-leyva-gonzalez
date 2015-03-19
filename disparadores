@@ -1,0 +1,19 @@
+CREATE TABLE usuario_xxx
+  (id_usuario INTEGER,edad INTEGER
+  );
+--se crea el trigger ,se le da un nombre
+--before es para validacion
+--inserta la app en donde se aplicara
+CREATE OR REPLACE TRIGGER disparador_xxx before
+  INSERT ON usuario_xxx FOR EACH row 
+  BEGIN 
+  
+  IF :new.edad<18 then
+  raise_application_error(-20001,'lo sentimos maldito engendro');
+  end if;
+  end;
+  /
+  insert into usuario_xxx values(1,20);
+  select * from usuario_xxx;
+  
+  *******************************************************************************************************

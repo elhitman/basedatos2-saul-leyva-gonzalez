@@ -1,0 +1,19 @@
+create table trabajador (id_trabajador integer, nombre varchar2(120),sueldo float);
+insert into trabajador values(1,'ana',4000);
+select * from trabajador;
+
+create or replace trigger actualizar_trabajador before update on trabajador 
+for each row
+
+begin
+
+:new.sueldo:=:old.sueldo+:new.sueldo;
+end;
+/
+
+update trabajador set sueldo = 4000 where id_trabajador=1;
+
+select * from trabajador;
+
+update trabajador set sueldo=2500 where id_trabajador=1;
+select*from trabajador;
